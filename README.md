@@ -2,6 +2,9 @@
 
 ## Environment Setup
 
+Should automatically work on rlogin environment.
+
+In blank environment:
 - Python 3.12.3 venv (other versions may work)
 - pip install -r requirements.txt
 

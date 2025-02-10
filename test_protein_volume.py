@@ -62,7 +62,7 @@ class TestProteinVolume(unittest.TestCase):
               "relative error =", rel_error)
         self.assertLessEqual(rel_error, 0.1)
 
-            def test_partially_overlapping_spheres(self):
+    def test_partially_overlapping_spheres(self):
         """
         Two spheres of radius 1 whose centers are 1 unit apart. They partially overlap.
         The exact union volume is 2.25 * pi (about 7.068583).

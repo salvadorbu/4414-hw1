@@ -1,5 +1,3 @@
-# o-3-mini-high
-
 import unittest
 import math
 

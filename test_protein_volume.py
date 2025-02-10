@@ -62,5 +62,33 @@ class TestProteinVolume(unittest.TestCase):
               "relative error =", rel_error)
         self.assertLessEqual(rel_error, 0.1)
 
+            def test_partially_overlapping_spheres(self):
+        """
+        Two spheres of radius 1 whose centers are 1 unit apart. They partially overlap.
+        The exact union volume is 2.25 * pi (about 7.068583).
+        """
+        atoms = [
+            {
+                'atom_type': 'O', 'aa': 'ALA', 'residue_number': 1,
+                'x': -0.5, 'y': 0.0, 'z': 0.0, 'charge': 0.0, 'radius': 1.0
+            },
+            {
+                'atom_type': 'O', 'aa': 'ALA', 'residue_number': 2,
+                'x': 0.5, 'y': 0.0, 'z': 0.0, 'charge': 0.0, 'radius': 1.0
+            }
+        ]
+    
+        vol = compute_protein_volume(atoms, n_div=100)
+        expected_union = 2.25 * math.pi
+        rel_error = abs(vol - expected_union) / expected_union
+    
+        print(
+            "Partial overlap spheres: approximated volume =", vol,
+            "exact volume =", expected_union,
+            "relative error =", rel_error
+        )
+    
+        self.assertLessEqual(rel_error, 0.1)
+
 if __name__ == '__main__':
     unittest.main()

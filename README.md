@@ -2,7 +2,7 @@
 
 ## Environment Setup
 
-Should automatically work on rlogin environment.
+Should automatically work on rlogin environment (no setup necessary).
 
 In blank environment:
 - Python 3.12.3 venv (other versions may work)
